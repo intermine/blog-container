@@ -16,22 +16,21 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+// Coming from a MySQL Dokku plugin.
+extract(parse_url($_ENV["DATABASE_URL"]));
+
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', substr($path, 1));
 
 /** MySQL database username */
-define('DB_USER', 'username_here');
+define('DB_USER', $user);
 
 /** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+define('DB_PASSWORD', $pass);
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
-
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
-
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
+define('DB_HOST', $host );
 
 /**#@+
  * Authentication Unique Keys and Salts.
