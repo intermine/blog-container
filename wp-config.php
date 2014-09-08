@@ -38,6 +38,15 @@ echo("pass:" . $pass);
 define('DB_HOST', $host );
 echo("host:" . $host);
 
+$mysqli = new mysqli($host, $user, $pass, $db);
+	
+	if (mysqli_connect_errno()) {
+		printf("Connect failed: %s\n", mysqli_connect_error());
+		exit();
+	} else {
+		echo("Connected successfully.");
+	}
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
