@@ -48,14 +48,6 @@ define('DB_PASSWORD', $_ENV["DB_PASS"]);
 // define('DB_HOST', $_ENV["DB_HOST"] );
 define('DB_HOST', "10.10.10.28" );
 
-$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-	
-if (mysqli_connect_errno()) {
-printf("Connect failed: %s\n", mysqli_connect_error());
-exit();
-} else {
-echo("Connected successfully.");
-}
 
 /**#@+
  * Authentication Unique Keys and Salts.
