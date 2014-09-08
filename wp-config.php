@@ -21,31 +21,40 @@ extract(parse_url($_ENV["DATABASE_URL"]));
 
 
 
+// // ** MySQL settings - You can get this info from your web host ** //
+// /** The name of the database for WordPress */
+// define('DB_NAME', substr($path, 1));
+
+// * MySQL database username 
+// define('DB_USER', $user);
+
+// /** MySQL database password */
+// define('DB_PASS', $pass);
+
+// /** MySQL hostname */
+// define('DB_HOST', $host );
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', substr($path, 1));
-echo("path:" . substr($path, 1));
+define('DB_NAME', $_ENV["DB_NAME"]);
 
 /** MySQL database username */
-define('DB_USER', $user);
-echo("user:" . $user);
+define('DB_USER', $_ENV["DB_USER"]);
 
 /** MySQL database password */
-define('DB_PASS', $pass);
-echo("pass:" . $pass);
+define('DB_PASS', $_ENV["DB_PASS"]);
 
 /** MySQL hostname */
-define('DB_HOST', $host );
-echo("host:" . $host);
+define('DB_HOST', $_ENV["DB_USER"] );
 
-$mysqli = new mysqli($host, $user, $pass, $db);
+$mysqli = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 	
-	if (mysqli_connect_errno()) {
-		printf("Connect failed: %s\n", mysqli_connect_error());
-		exit();
-	} else {
-		echo("Connected successfully.");
-	}
+if (mysqli_connect_errno()) {
+printf("Connect failed: %s\n", mysqli_connect_error());
+exit();
+} else {
+echo("Connected successfully.");
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.
