@@ -45,7 +45,7 @@ define('DB_USER', $_ENV["DB_USER"]);
 define('DB_PASS', $_ENV["DB_PASS"]);
 
 /** MySQL hostname */
-define('DB_HOST', $_ENV["DB_USER"] );
+define('DB_HOST', $_ENV["DB_HOST"] );
 
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 	
