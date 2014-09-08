@@ -27,7 +27,7 @@ define('DB_NAME', substr($path, 1));
 define('DB_USER', $user);
 
 /** MySQL database password */
-define('DB_PASSWORD', $pass);
+define('DB_PASS', $pass);
 
 /** MySQL hostname */
 define('DB_HOST', $host );
