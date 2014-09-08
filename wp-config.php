@@ -19,20 +19,24 @@
 // Coming from a MySQL Dokku plugin.
 extract(parse_url($_ENV["DATABASE_URL"]));
 
-echo("TESTING");
+
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', substr($path, 1));
+echo("path:" . substr($path, 1));
 
 /** MySQL database username */
 define('DB_USER', $user);
+echo("user:" . $user);
 
 /** MySQL database password */
 define('DB_PASS', $pass);
+echo("pass:" . $pass);
 
 /** MySQL hostname */
 define('DB_HOST', $host );
+echo("host:" . $host);
 
 /**#@+
  * Authentication Unique Keys and Salts.
