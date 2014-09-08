@@ -19,6 +19,8 @@
 // Coming from a MySQL Dokku plugin.
 extract(parse_url($_ENV["DATABASE_URL"]));
 
+echo("TESTING");
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', substr($path, 1));
