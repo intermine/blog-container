@@ -45,9 +45,10 @@ define('DB_USER', $_ENV["DB_USER"]);
 define('DB_PASSWORD', $_ENV["DB_PASS"]);
 
 /** MySQL hostname */
-define('DB_HOST', $_ENV["DB_HOST"] );
+// define('DB_HOST', $_ENV["DB_HOST"] );
+define('DB_HOST', "10.10.10.27" );
 
-$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	
 if (mysqli_connect_errno()) {
 printf("Connect failed: %s\n", mysqli_connect_error());
