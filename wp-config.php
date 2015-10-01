@@ -25,7 +25,7 @@ extract(parse_url($_ENV["DATABASE_URL"]));
 // /** The name of the database for WordPress */
 // define('DB_NAME', substr($path, 1));
 
-// * MySQL database username 
+// * MySQL database username
 // define('DB_USER', $user);
 
 // /** MySQL database password */
@@ -45,8 +45,8 @@ define('DB_USER', $_ENV["DB_USER"]);
 define('DB_PASSWORD', $_ENV["DB_PASS"]);
 
 /** MySQL hostname */
-// define('DB_HOST', $_ENV["DB_HOST"] );
-define('DB_HOST', "10.10.10.28" );
+define('DB_HOST', $_ENV["DB_HOST"] );
+// define('DB_HOST', "10.10.10.28" );
 
 
 /**#@+
